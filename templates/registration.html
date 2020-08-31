@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+    </div>
+
+ <div class="col-sm">
+    <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Registration</h1>
+            </div>
+            <form method = 'POST'>
+                {% csrf_token %}
+                <div class="login-form">
+                    <div class="control-group">
+                    <input type="text"  value="Name">{{ formset.name }}
+                    </div>
+                    <br>
+                    <div class="control-group">
+                    <input type="text"  value="Phone">{{ formset.phone_number }}
+                    </div>
+                    <br>
+                    <div class="control-group">
+                    <input type="text"  value="Email">{{ formset.email }}
+                    </div>
+                    <br>
+                    <input type="submit", value="Create User">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+      <div class="col-sm">
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

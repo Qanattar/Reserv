@@ -1,0 +1,14 @@
+<{% extends 'main.html' %}
+
+{% block content %}
+    <h3> Hello. Welcome to the CPM system.</h3>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <form class="mt-4">
+                    <a class="btn btn-outline-info" href="{% url 'registration_page'  %}">Sign up</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

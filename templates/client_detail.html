@@ -1,0 +1,51 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+ <br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Client</h5>
+            <h6>{{ client.name }}</h6>
+			<hr>
+            <a class="btn btn-outline-info" href="{% url 'create_record' client.id %}">Create New Record</a>
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="card card-body">
+			<h5>Contact Information</h5>
+			<hr>
+			<p>Email: {{ client.email }}</p>
+			<p>Phone: {{ client.phone_number }}</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+                <h5>Client's records:</h5>
+				<tr>
+					<th>Date</th>
+                    {% for record in records %}
+			    		<tr>
+					    	<td>{{record.time.date}}</td>
+                            <td><a class="btn btn-outline-danger" href="{% url 'delete_record' record.id %}">Delete</a></td>
+                            <td><a class="btn btn-outline-info" href="{% url 'update_record' record.id %}">Update</a></td>
+
+					    </tr>
+				    {% endfor %}
+
+				</tr>
+
+			</table>
+		</div>
+	</div>
+</div>
+    
+{% endblock %}
